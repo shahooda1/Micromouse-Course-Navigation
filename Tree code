@@ -1,4 +1,35 @@
 
+mazeCoords = [
+    ["07LT", "17RTB", "27LT", "37TB", "47TB", "57T", "67TB", "77RT"],
+    ["06LR", "16RT", "26B", "36RT", "46LRT", "56LRB", "66LT", "76RB"],
+    ["05LB", "15R", "25LRT", "35RLB", "45L", "55TB", "65", "75RTB"],
+    ["04LT", "14R", "24LR", "34LT", "44R", "54LRT", "64LR", "74LRT"],
+    ["03LR", "13L", "23R", "33LB", "43RB", "53LR", "63LR", "73LR"],
+    ["02LR", "12LR", "22LB", "32TB", "42TB", "52B", "62", "72R"],
+    ["01LR", "11L", "21TB", "31TB", "41T", "51RT", "61LR", "71LR"],
+    ["00LRB", "10L", "20T", "30RTB", "40LRB", "50LB", "60RB", "70LRB"]
+]
+
+maze = """+---+---+---+---+---+---+---+---+
+|       |                       |   7
++   +---+   +---+---+   +---+   +                         
+|   |           |   |   |       |   6 
++   +   +---+   +   +---+   +---+                              
+|       |   |   |               |   5
++---+   +   +---+   +---+   +---+                              
+|       |   |       |   |   |   |   4
++   +   +   +   +   +   +   +   +
+|   |       |       |   |   |   |   3
++   +   +   +---+---+   +   +   +
+|   |   |                       |   2
++   +   +---+---+---+---+   +   +
+|   |                   |   |   |   1
++   +   +---+---+   +   +   +   +
+| X |           |   |       |   |   0
++---+---+---+---+---+---+---+---+
+
+  0   1   2   3   4   5   6   7"""
+
 class Node:
     
     def __init__ (self, data):
@@ -7,10 +38,6 @@ class Node:
         self.right = None
         self.data = data
 
-    def printTree (self):
-        
-        print(self.data)
-        
     def insert (self, data):
         
         if self.data:
@@ -21,16 +48,38 @@ class Node:
                     
                     self.right = Node(data)
                     
+                else:
+                
+                    self.right.insert(data)
+                    
         else:
             
             self.data = data
+            
+    
+    def printTree (self):
+        
+        if self.left:
+            
+            self.left.printTree
+        
+        if self.right:
+            
+            self.right.printTree()
+            
+        print(self.data)
     
 
+print(maze)
 
-root = Node(10)
+#root = Node(10)
 
-root.insert(6)
-root.printTree()
+#root.insert(6)
+
+#root.printTree()
+
+#for i in range(len(mazeCoords)):
+    #print(mazeCoords[i])
 
 
 
