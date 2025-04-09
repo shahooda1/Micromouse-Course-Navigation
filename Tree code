@@ -73,7 +73,8 @@ class Node:
         print(self.data)
     
 
-print(maze)
+for row in maze:
+    print(row[0])
 
 #root = Node(10)
 
