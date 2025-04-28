@@ -32,17 +32,22 @@ class Node:
         
         print(self.data)
         
+        if self.left:
+            
+            self.left.printTree()
+        
         if self.center:
             
             self.center.printTree()
+            
+        if self.right:
+            
+            self.right.printTree()
 
         
 root = Node(0)
 
-c01 = 
-
-
-root.insertCenter(1)
-root.insertCenter(2)
+r01 = root.insertCenter(1)
+r02 = r01.insertCenter(2)
 
 root.printTree()
