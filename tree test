@@ -5,29 +5,30 @@ class Node:
         
         self.data = data
         self.left = None
-        self.right = None
         self.center = None
+        self.right = None
         
         self.depth = 0
         
     def insertLeft(self, data):
         
         self.left = Node(data)
-        self.left.depth = self.depth + 1
+        #self.left.depth = self.depth + 1
         return self.left
-    
-    def insertRight (self, data):
-        
-        self.right = Node(data)
-        self.right.depth = self.depth + 1
-        return self.right
     
     def insertCenter (self, data):
     
         self.center = Node(data)
-        self.center.depth = self.depth + 1
+        #self.center.depth = self.depth + 1
         return self.center
+    
+    def insertRight (self, data):
         
+        self.right = Node(data)
+        #self.right.depth = self.depth + 1
+        return self.right
+    
+
     def printTree (self):
         
         print(self.data)
@@ -44,10 +45,32 @@ class Node:
             
             self.right.printTree()
 
+
         
 root = Node(0)
 
-r01 = root.insertCenter(1)
-r02 = r01.insertCenter(2)
+c01 = root.insertCenter(1)
+#increase depth
+c02 = c01.insertCenter(2)
+#increase depth
+c03 = c02.insertCenter(3)
+#increase depth
+c04 = c03.insertCenter(4)
+#increase depth
+c14 = c04.insertCenter(14)
+#increase depth
+c13 = c14.insertRight(13)
+c15 = c14.insertLeft(15)
+#increase depth
+c12 = c13.insertCenter(12)
+c23 = c13.insertLeft(23)
+c05 = c15.insertLeft(5)
+c16 = c15.insertCenter(16)
+#increase depth
+c11 = c12.insertCenter(11)
+c22 = c23.
+c24 = c23.
+c6 = c5.
+c26 = c16.
 
 root.printTree()
