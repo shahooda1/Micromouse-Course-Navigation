@@ -1,76 +1,122 @@
 
 class Node:
     
-    def __init__ (self, data):
+    def __init__ (self, data, depth):
         
         self.data = data
         self.left = None
         self.center = None
         self.right = None
         
-        self.depth = 0
+        self.depth = depth
         
-    def insertLeft(self, data):
+    def insertLeft(self, data, depth):
         
-        self.left = Node(data)
+        self.left = Node(data, depth)
         #self.left.depth = self.depth + 1
         return self.left
     
-    def insertCenter (self, data):
+    def insertCenter (self, data, depth):
     
-        self.center = Node(data)
+        self.center = Node(data, depth)
         #self.center.depth = self.depth + 1
         return self.center
     
-    def insertRight (self, data):
+    def insertRight (self, data, depth):
         
-        self.right = Node(data)
+        self.right = Node(data, depth)
         #self.right.depth = self.depth + 1
         return self.right
     
 
     def printTree (self):
         
+        print("-" * self.depth, end="")
         print(self.data)
+        
         
         if self.left:
             
+            print("L: ", end="")
             self.left.printTree()
         
         if self.center:
             
+            print("C: ", end="")
             self.center.printTree()
             
         if self.right:
             
+            print("R: ", end="")
             self.right.printTree()
 
 
         
-root = Node(0)
+root = Node(0, 0)
 
-c01 = root.insertCenter(1)
+c01 = root.insertCenter(1, 1)
 #increase depth
-c02 = c01.insertCenter(2)
+
+c02 = c01.insertCenter(2, 2)
 #increase depth
-c03 = c02.insertCenter(3)
+c03 = c02.insertCenter(3, 3)
 #increase depth
-c04 = c03.insertCenter(4)
+c04 = c03.insertCenter(4, 4)
 #increase depth
-c14 = c04.insertCenter(14)
+c14 = c04.insertCenter(14, 5)
 #increase depth
-c13 = c14.insertRight(13)
-c15 = c14.insertLeft(15)
+c13 = c14.insertRight(13, 6)
+c15 = c14.insertLeft(15, 6)
 #increase depth
-c12 = c13.insertCenter(12)
-c23 = c13.insertLeft(23)
-c05 = c15.insertLeft(5)
-c16 = c15.insertCenter(16)
+c12 = c13.insertCenter(12, 7)
+c23 = c13.insertLeft(23, 7)
+c05 = c15.insertLeft(5, 7)
+c16 = c15.insertCenter(16, 7)
 #increase depth
-c11 = c12.insertCenter(11)
-c22 = c23.
-c24 = c23.
-c6 = c5.
-c26 = c16.
+c11 = c12.insertCenter(11, 8)
+c22 = c23.insertRight(22, 8)
+c24 = c23.insertLeft(24, 8)
+c06 = c05.insertCenter(6, 8)
+c26 = c16.insertCenter(26, 8)
+#increase depth
+c10 = c11.insertCenter(10, 9)
+c21 = c11.insertLeft(21, 9)
+c32 = c22.insertLeft(32, 9)
+c25 = c24.insertCenter(25, 9)
+c07 = c06.insertCenter(7, 9)
+c27 = c26.insertLeft(27, 9)
+c36 = c26.insertCenter(36, 9)
+#increase depth
+c20 = c10.insertLeft(20, 10)
+c31 = c21.insertCenter(31, 10)
+c42 = c32.insertCenter(42, 10)
+c17 = c07.insertRight(17, 10)
+c37 = c27.insertRight(37, 10)
+c35 = c36.insertCenter(35, 10)
+#increase depth
+c30 = c20.insertCenter(30, 11)
+c41 = c31.insertCenter(41, 11)
+c52 = c42.insertCenter(52, 11)
+c47 = c37.insertCenter(47, 11)
+#increase depth
+c40 = c41.insertRight(40, 12)
+c51 = c41.insertCenter(51, 12)
+c53 = c52.insertLeft(53, 12)
+c62p2 = c52.insertCenter(62, 12)
+c57 = c47.insertCenter(57, 12)
+#increase depth
+c50 = c51.insertRight(50, 13)
+c54 = c53.insertCenter(54, 13)
+c56 = c57.insertRight(56, 13)
+c67 = c57.insertCenter(67, 13)
+#increase depth
+c60 = c50.insertLeft(60, 14)
+c77 = c67.insertCenter(77, 14)
+#increase depth
+c61 = c60.insertLeft(61, 15)
+c76 = c77.insertRight(76, 15)
+#increase depth
+c62 = c61.insert()
+c66 = c76.insert
 
 root.printTree()
