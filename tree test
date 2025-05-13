@@ -7,9 +7,6 @@ RED = "\033[91m" #No Path
 RESET = "\033[0m"
 
 
-print(f"{YELLOW} Hi {RESET}")
-
-
 class Node:
     
     def __init__ (self, data, depth):
@@ -77,70 +74,70 @@ c15 = c14.insertLeft(f"{BLUE}15{RESET}", 6)
 # increase depth
 c12 = c13.insertCenter(f"{BLUE}12{RESET}", 7)
 c23 = c13.insertLeft(f"{YELLOW}23{RESET}", 7)
-c05 = c15.insertLeft("5", 7)
-c16 = c15.insertCenter(f"{BLUE}16", 7)
+c05 = c15.insertLeft(f"{RED}5{RESET}", 7)
+c16 = c15.insertCenter(f"{BLUE}16{RESET}", 7)
 # increase depth
 c11 = c12.insertCenter(f"{BLUE}11{RESET}", 8)
 c22 = c23.insertRight(f"{YELLOW}22{RESET}", 8)
-c24 = c23.insertLeft("24", 8)
-c06 = c05.insertCenter("6", 8)
+c24 = c23.insertLeft(f"{RED}24{RESET}", 8)
+c06 = c05.insertCenter(f"{RED}6{RESET}", 8)
 c26 = c16.insertCenter(f"{BLUE}26{RESET}", 8)
 # increase depth
-c10 = c11.insertCenter("10", 9)
+c10 = c11.insertCenter(f"{RED}10{RESET}", 9)
 c21 = c11.insertLeft(f"{BLUE}21{RESET}", 9)
 c32 = c22.insertLeft(f"{YELLOW}32{RESET}", 9)
-c25 = c24.insertCenter("25", 9)
-c07 = c06.insertCenter("7", 9)
+c25 = c24.insertCenter(f"{RED}25{RESET}", 9)
+c07 = c06.insertCenter(f"{RED}7{RESET}", 9)
 c27 = c26.insertLeft(f"{BLUE}27{RESET}", 9)
-c36 = c26.insertCenter("36", 9)
+c36 = c26.insertCenter(f"{RED}36{RESET}", 9)
 # increase depth
-c20 = c10.insertLeft("20", 10)
+c20 = c10.insertLeft(f"{RED}20{RESET}", 10)
 c31 = c21.insertCenter(f"{BLUE}31{RESET}", 10)
 c42 = c32.insertCenter(f"{YELLOW}42{RESET}", 10)
-c17 = c07.insertRight("17", 10)
+c17 = c07.insertRight(f"{RED}17{RESET}", 10)
 c37 = c27.insertRight(f"{BLUE}37{RESET}", 10)
-c35 = c36.insertCenter("35", 10)
+c35 = c36.insertCenter(f"{RED}35{RESET}", 10)
 # increase depth
-c30 = c20.insertCenter("30", 11)
+c30 = c20.insertCenter(f"{RED}30{RESET}", 11)
 c41 = c31.insertCenter(f"{BLUE}41{RESET}", 11)
 c52 = c42.insertCenter(f"{YELLOW}52{RESET}", 11)
 c47 = c37.insertCenter(f"{BLUE}47{RESET}", 11)
 # increase depth
-c40 = c41.insertRight("40", 12)
+c40 = c41.insertRight(f"{RED}40{RESET}", 12)
 c51 = c41.insertCenter(f"{BLUE}51{RESET}", 12)
-c53 = c52.insertLeft("53", 12)
+c53 = c52.insertLeft(f"{RED}53{RESET}", 12)
 c57 = c47.insertCenter(f"{BLUE}57{RESET}", 12)
 # Path 2
 c62p2 = c52.insertCenter(f"{YELLOW}62{RESET}", 12)
 # increase depth
 c50 = c51.insertRight(f"{BLUE}50{RESET}", 13)
-c54 = c53.insertCenter("54", 13)
-c56 = c57.insertRight("56", 13)
+c54 = c53.insertCenter(f"{RED}54{RESET}", 13)
+c56 = c57.insertRight(f"{RED}56{RESET}", 13)
 c67 = c57.insertCenter(f"{BLUE}67{RESET}", 13)
 # Path 2
 c63p2 = c62p2.insertLeft(f"{YELLOW}63{RESET}", 13)
-c72p2 = c62p2.insertCenter("72", 13)
+c72p2 = c62p2.insertCenter(f"{RED}72{RESET}", 13)
 # increase depth
 c60 = c50.insertLeft(f"{BLUE}60{RESET}", 14)
 c77 = c67.insertCenter(f"{BLUE}77{RESET}", 14)
 # Path 2
 c64p2 = c63p2.insertCenter(f"{YELLOW}64{RESET}", 14)
-c71p2 = c72p2.insertRight("71", 14)
-c73p2 = c72p2.insertLeft("73", 14)
+c71p2 = c72p2.insertRight(f"{RED}71{RESET}", 14)
+c73p2 = c72p2.insertLeft(f"{RED}73{RESET}", 14)
 # increase depth
 c61 = c60.insertLeft(f"{BLUE}61{RESET}", 15)
-c76 = c77.insertRight(f"{BLUE}76", 15)
+c76 = c77.insertRight(f"{BLUE}76{RESET}", 15)
 # Path 2
 c65p2 = c64p2.insertCenter(f"{YELLOW}65{RESET}", 15)
-c70p2 = c71p2.insertCenter("70", 15)
-c74p2 = c73p2.insertCenter("74", 15)
+c70p2 = c71p2.insertCenter(f"{RED}70{RESET}", 15)
+c74p2 = c73p2.insertCenter(f"{RED}74{RESET}", 15)
 # increase depth
 c66 = c76.insertRight(f"{BLUE}66{RESET}", 16)
 # Path 3
 c62p3 = c61.insertCenter(f"{BLUE}62{RESET}", 16)
 # Path 2
 c55p2 = c65p2.insertLeft(f"{YELLOW}55{RESET}", 16)
-c75p2 = c65p2.insertRight("75", 16)
+c75p2 = c65p2.insertRight(f"{RED}75{RESET}", 16)
 # increase depth
 # Path 1
 c65p1 = c66.insertLeft(f"{BLUE}65{RESET}", 17)
@@ -148,38 +145,38 @@ c65p1 = c66.insertLeft(f"{BLUE}65{RESET}", 17)
 c45p2 = c55p2.insertCenter(f"{YELLOW}45{RESET}", 17)
 # Path 3
 c63p3 = c62p3.insertCenter(f"{BLUE}63{RESET}", 17)
-c72p3 = c62p3.insertRight("72", 17)
+c72p3 = c62p3.insertRight(f"{RED}72{RESET}", 17)
 # increase depth
 # Path 1
 c55p1 = c65p1.insertRight(f"{BLUE}55{RESET}", 18)
-c75p1 = c65p1.insertLeft("75", 18)
+c75p1 = c65p1.insertLeft(f"{RED}75{RESET}", 18)
 # Path 2
 c44p2 = c45p2.insertLeft(f"{YELLOW}44{RESET}", 18)
-c46p2 = c45p2.insertRight("46", 18)
+c46p2 = c45p2.insertRight(f"{RED}46{RESET}", 18)
 # Path 3
 c64p3 = c63p3.insertCenter(f"{BLUE}64{RESET}", 18)
-c71p3 = c72p3.insertRight("71", 18)
-c73p3 = c72p3.insertLeft("73", 18)
+c71p3 = c72p3.insertRight(f"{RED}71{RESET}", 18)
+c73p3 = c72p3.insertLeft(f"{RED}73{RESET}", 18)
 # increase depth
 # Path 1
 c45p1 = c55p1.insertCenter(f"{BLUE}45{RESET}", 19)
 # Path 3
 c65p3 = c64p3.insertCenter(f"{BLUE}65{RESET}", 19)
-c70p3 = c71p3.insertCenter("70", 19)
-c74p3 = c73p3.insertCenter("74", 19)
+c70p3 = c71p3.insertCenter(f"{RED}70{RESET}", 19)
+c74p3 = c73p3.insertCenter(f"{RED}74{RESET}", 19)
 # increase depth
 # Path 1
 c44p1 = c45p1.insertLeft(f"{BLUE}44{RESET}", 20)
-c46p1 = c45p1.insertRight("46", 20)
+c46p1 = c45p1.insertRight(f"{RED}46{RESET}", 20)
 # Path 3
 c55p3 = c65p3.insertLeft(f"{BLUE}55{RESET}", 20)
-c75p3 = c65p3.insertRight("75", 20)
+c75p3 = c65p3.insertRight(f"{RED}75{RESET}", 20)
 # increase depth
 # Path 3
 c45p3 = c55p3.insertCenter(f"{BLUE}45{RESET}", 21)
 # increase depth
 # Path 3
 c44p3 = c45p3.insertLeft(f"{BLUE}44{RESET}", 22)
-c46p3 = c45p3.insertRight("46", 22)
+c46p3 = c45p3.insertRight(f"{RED}46{RESET}", 22)
 
 c00.printTree()
