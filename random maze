@@ -6,46 +6,79 @@ class Node:
         self.data = data
         
         self.left = None
-        self.right = None
         self.center = None
+        self.right = None
         
     def insertLeft(self, data):
         self.left = Node(data)
         return self.left
     
+    def insertCenter(self, data):
+        self.center = Node(data)
+        return self.center
+    
     def insertRight(self, data):
         self.right = Node(data)
         return self.right
         
-    def insertCenter(self, data):
-        self.center = Node(data)
-        return self.center
+    
+    
+    def printTree(self):
+        
+        print(self.data)
+        
+        if self.left:
+            
+            print("L: ", end="")
+            self.left.printTree()
+        
+        if self.center:
+            
+            print("C: ", end="")
+            self.center.printTree()
+            
+        if self.right:
+            
+            print("R: ", end="")
+            self.right.printTree()
+            
+        
+        
+        
+        
         
 def randomizeMaze(start):
     
     seed = random.randint(0, 1)
     
+    #up first
     if seed == 0:
         c10 = start.insertCenter(10)
         c01 = start.insertRight(1)
         end = c10.insertRight(11)
     
+    #right first
     elif seed == 1:
         c01 = start.insertRight(1)
         c10 = start.insertCenter(10)
-        end = c01.insertCenter(11)
+        end = c01.insertLeft(11)
         
     return c01, c10, end
 
 
 start = Node(0)
-
+c01 = None
+c10 = None
+end = None
 
 randomizeMaze(start)
 
+start.printTree()
 
 maze = [
     [c10, end],
     [start, c01]
     ]
+
+
         
