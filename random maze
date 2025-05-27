@@ -1,1 +1,51 @@
+import random
 
+class Node:
+    def __init__(self, data):
+        
+        self.data = data
+        
+        self.left = None
+        self.right = None
+        self.center = None
+        
+    def insertLeft(self, data):
+        self.left = Node(data)
+        return self.left
+    
+    def insertRight(self, data):
+        self.right = Node(data)
+        return self.right
+        
+    def insertCenter(self, data):
+        self.center = Node(data)
+        return self.center
+        
+def randomizeMaze(start):
+    
+    seed = random.randint(0, 1)
+    
+    if seed == 0:
+        c10 = start.insertCenter(10)
+        c01 = start.insertRight(1)
+        end = c10.insertRight(11)
+    
+    elif seed == 1:
+        c01 = start.insertRight(1)
+        c10 = start.insertCenter(10)
+        end = c01.insertCenter(11)
+        
+    return c01, c10, end
+
+
+start = Node(0)
+
+
+randomizeMaze(start)
+
+
+maze = [
+    [c10, end],
+    [start, c01]
+    ]
+        
