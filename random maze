@@ -22,36 +22,110 @@ class Node:
         return self.right
         
     
-    
-    def printTree(self):
+    def printTree(self, level = 0):
         
         print(self.data)
         
         if self.left:
             
-            print("L: ", end="")
-            self.left.printTree()
+            print(" " * level + "L: ", end="")
+            self.left.printTree(level + 1)
         
         if self.center:
             
-            print("C: ", end="")
-            self.center.printTree()
+            print(" " * level + "C: ", end="")
+            self.center.printTree(level + 1)
             
         if self.right:
             
-            print("R: ", end="")
-            self.right.printTree()
+            print(" " * level + "R: ", end="")
+            self.right.printTree(level + 1)
             
-        
-        
-        
         
         
 def randomizeMaze(start):
     
-    seed = random.randint(0, 1)
+    #start
+    match random.randint(1, 3):
+        case 1:
+            c01 = start.insertCenter(1)
+            c02 = 0
+            c03 = 0
+        case 2:
+            c01 = start.insertRight(1)
+            c02 = start.insertLeft(2)
+            c03 = 0
+        case 3:
+            c01 = start.insertLeft(1)
+            c02 = start.insertCenter(2)
+            c03 = start.insertRight(3)
     
-    #up first
+    #c01
+    if c01:
+        
+        match random.randint(0, 3):
+            case 0:
+                c04 = 0
+                c05 = 0
+                c06 = 0
+            case 1:
+                c04 = c01.insertLeft(4)
+                c05 = 0
+                c06 = 0
+            case 2:
+                c04 = c01.insertRight(4)
+                c05 = c01.insertCenter(5)
+                c06 = 0
+            case 3:
+                c04 = c01.insertCenter(4)
+                c05 = c01.insertLeft(5)
+                c06 = c01.insertRight(6)
+            
+    #c02
+    if c02:
+        
+        match random.randint(0, 3):
+            case 0:
+                c07 = 0
+                c08 = 0
+                c09 = 0
+            case 1:
+                c07 = c02.insertRight(7)
+                c08 = 0
+                c09 = 0
+            case 2:
+                c07 = c02.insertLeft(7)
+                c08 = c02.insertCenter(8)
+                c09 = 0
+            case 3:
+                c07 = c02.insertCenter(7)
+                c08 = c02.insertRight(8)
+                c09 = c02.insertLeft(9)
+    #c03
+    if c03:
+        match random.randint(0, 3):
+            case 0:
+                c10 = 0
+                c11 = 0
+                c12 = 0
+            case 1:
+                c10 = c03.insertCenter(10)
+                c11 = 0
+                c12 = 0
+            case 2:
+                c10 = c03.insertLeft(10)
+                c11 = c03.insertRight(11)
+                c12 = 0
+            case 3:
+                c10 = c03.insertRight(10)
+                c11 = c03.insertCenter(11)
+                c12 = c03.insertLeft(12)
+            
+    
+    
+    
+    
+    '''#up first
     if seed == 0:
         c10 = start.insertCenter(10)
         c01 = start.insertRight(1)
@@ -61,24 +135,23 @@ def randomizeMaze(start):
     elif seed == 1:
         c01 = start.insertRight(1)
         c10 = start.insertCenter(10)
-        end = c01.insertLeft(11)
+        end = c01.insertLeft(11)'''
         
-    return c01, c10, end
+
 
 
 start = Node(0)
-c01 = None
-c10 = None
+
 end = None
 
 randomizeMaze(start)
 
 start.printTree()
 
-maze = [
+'''maze = [
     [c10, end],
     [start, c01]
-    ]
+    ]'''
 
 
         
