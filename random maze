@@ -1,5 +1,6 @@
 import random
 
+#creating a class for each cell of the maze
 class Node:
     def __init__(self, data):
         
@@ -8,7 +9,8 @@ class Node:
         self.left = None
         self.center = None
         self.right = None
-        
+
+#functions to insert nodes at certain positions
     def insertLeft(self, data):
         self.left = Node(data)
         return self.left
@@ -21,7 +23,7 @@ class Node:
         self.right = Node(data)
         return self.right
         
-    
+    #function for printing tree with proper indentation
     def printTree(self, level = 0):
         
         print(self.data)
@@ -42,7 +44,7 @@ class Node:
             self.right.printTree(level + 1)
             
         
-        
+        #function for creating random mazes
 def randomizeMaze(start):
     # layer 0
     c01 = c02 = c03 = 0
