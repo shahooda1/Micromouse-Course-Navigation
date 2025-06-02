@@ -21,24 +21,24 @@ class Node:
         self.right = Node(data)
         return self.right
         
-    
+    #function to print tree
     def printTree(self, level = 0):
         
         print(self.data)
         
         if self.left:
             
-            print(" " * level + "L: ", end="")
+            print("-" * level + "L: ", end="")
             self.left.printTree(level + 1)
         
         if self.center:
             
-            print(" " * level + "C: ", end="")
+            print("-" * level + "C: ", end="")
             self.center.printTree(level + 1)
             
         if self.right:
             
-            print(" " * level + "R: ", end="")
+            print("-" * level + "R: ", end="")
             self.right.printTree(level + 1)
             
         
@@ -47,11 +47,14 @@ def createRandomChildren(node, depth, maxDepth, counter):
     if depth > maxDepth:
         return counter
         
+    #determining how many branches come from the node
     branches = random.randint(0, 3)
     
+    #what branch is left
     available = ["left", "center", "right"]
     random.shuffle(available)
     
+    #adding children to the nodes
     for i in range(branches):
         branch = available[i]
         counter += 1
@@ -63,9 +66,11 @@ def createRandomChildren(node, depth, maxDepth, counter):
         else:
             child = node.insertRight(counter)
             
+        #counter is the name of the node because it counts up from 1 when it adds the next one
         counter = createRandomChildren(child, depth + 1, maxDepth, counter)
     return counter
-    
+
+#function that creates the tree with the specified start node and depth
 def randomizeMaze(start, maxDepth = 4):
     createRandomChildren(start, 1, maxDepth, 0)
 
