@@ -28,27 +28,28 @@ class Node:
         
         if self.left:
             
-            print("-" * level + "L: ", end="")
+            print("--" * level + "L: ", end="")
             self.left.printTree(level + 1)
         
         if self.center:
             
-            print("-" * level + "C: ", end="")
+            print("--" * level + "C: ", end="")
             self.center.printTree(level + 1)
-            
+
         if self.right:
-            
-            print("-" * level + "R: ", end="")
+
+            print("--" * level + "R: ", end="")
             self.right.printTree(level + 1)
-            
+
         
         
 def createRandomChildren(node, depth, maxDepth, counter):
     if depth > maxDepth:
+    
         return counter
         
     #determining how many branches come from the node
-    branches = random.randint(0, 3)
+    branches = random.randint(1, 3)
     
     #what branch is left
     available = ["left", "center", "right"]
@@ -65,7 +66,7 @@ def createRandomChildren(node, depth, maxDepth, counter):
             child = node.insertCenter(counter)
         else:
             child = node.insertRight(counter)
-            
+
         #counter is the name of the node because it counts up from 1 when it adds the next one
         counter = createRandomChildren(child, depth + 1, maxDepth, counter)
     return counter
@@ -73,23 +74,23 @@ def createRandomChildren(node, depth, maxDepth, counter):
 #function that creates the tree with the specified start node and depth
 def randomizeMaze(start, maxDepth = 4):
     createRandomChildren(start, 1, maxDepth, 0)
+    
+def findOptimalPath(start, end):
 
-
+    pass
+    
 
 
 
 start = Node(0)
+end = 0
 
-end = None
 
 randomizeMaze(start)
 
 start.printTree()
 
-'''maze = [
-    [c10, end],
-    [start, c01]
-    ]'''
+
 
 
         
