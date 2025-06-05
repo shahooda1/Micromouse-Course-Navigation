@@ -80,12 +80,204 @@ def createRandomChildren(node, depth, maxDepth, counter):
     return counter
 
 #function that creates the tree with the specified start node and depth
-def randomizeMaze(start, maxDepth = 4):
+def randomizeMaze(start, maxDepth = 3):
     createRandomChildren(start, 1, maxDepth, 0)
     
-def findOptimalPath(start):
     
-    print(start.left.left.data)
+    
+def findOptimalPath(l0, target):
+    
+    #layer 0, layer 1, layer 2, layer 3
+    
+    if l0.left:
+        l1 = l0.left
+        
+        if l1.data == target:
+            return print(f"Path to end:{l0.data, l1.data}")
+        
+        if l1.left:
+            l2 = l1.left
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+        
+        if l1.center:
+            l2 = l1.center
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+        
+        if l1.right:
+            l2 = l1.right
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+    
+    if l0.center:
+        l1 = l0.center
+        
+        if l1.data == target:
+            return print(f"Path to end:{l0.data, l1.data}")
+        
+        if l1.left:
+            l2 = l1.left
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+        
+        if l1.center:
+            l2 = l1.center
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+        
+        if l1.right:
+            l2 = l1.right
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+    
+    if l0.right:
+        l1 = l0.right
+        
+        if l1.data == target:
+            return print(f"Path to end:{l0.data, l1.data}")
+        
+        if l1.left:
+            l2 = l1.left
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+        
+        if l1.center:
+            l2 = l1.center
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+        
+        if l1.right:
+            l2 = l1.right
+            
+            if l2.data == target:
+                return print(f"Path to end: {l0.data, l1.data, l2.data}")
+            
+            if l2.left:
+                l3 = l2.left
+                
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.center:
+                l3 = l2.center
+                
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+            if l2.right:
+                l3 = l2.right
+                
+                if l3.data == target:
+                    return print(f"Path to end: {l0.data, l1.data, l2.data, l3.data}")
+                
     
 
 
@@ -99,6 +291,6 @@ randomizeMaze(start)
 start.printTree()
 
 
-findOptimalPath(start)
+findOptimalPath(start, 10)
 
         
