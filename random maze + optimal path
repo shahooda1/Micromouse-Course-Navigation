@@ -9,7 +9,6 @@ class Node:
         self.center = None
         self.right = None
         
-        self.isEnd = False
         
     def insertLeft(self, data):
         self.left = Node(data)
@@ -70,9 +69,7 @@ def createRandomChildren(node, depth, maxDepth, counter):
         else:
             child = node.insertRight(counter)
             
-        if counter == 10:
-            child.isEnd = True
-            
+
             
             
         #counter is the name of the node because it counts up from 1 when it adds the next one
